@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    background-color: rgba(23, 19, 19, 0.646);
+    min-height: 100vh;
+    color: black;
+}
+.App {
+    width: 100%;
+}
+.calculator {
+    min-width: 50vw;
+    width: 300px;
+    height: 560px;
+    border: 5px solid #1f1a38;
+    background-color: #1f1a38;
+    box-shadow: 5px 5px 10px #0c081c68, -5px -5px 5px rgba(0, 0, 0, 0.574);
+    display:  flex;
+    /* padding: 1rem 0.5rem; */
+    gap: 10px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.calculator div {
+    width: 90%;
+    padding: 0.5rem;
+
+}
+.one {
+    flex-wrap: wrap;
+    margin-bottom: 5%;
+    height: 90px;
+    background-color: rgba(255, 255, 255, 0.701);
+    backdrop-filter: blur(10px);
+    /* text-align: right; */
+    /* justify-content: flex-end; */
+    align-items: flex-end;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.one div:nth-child(1) {
+
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    font-size: 1.3rem;
+}
+.one div:nth-child(2) {
+    text-align: right;
+    padding: 0;
+}
+.row {
+    display: flex;
+    /* justify-content: center; */
+    gap: 7%       
+    /* height: 100px; */
+}
+.row .item{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 100%;
+    color: #fff;
+    backdrop-filter: blur(15px);
+    background-color: rgba(255, 166, 0, 0.376);
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.243), -5px -5px 10px black ;
+}
+.row .item:hover {
+    box-shadow: 2px 2px 10px black, -5px -5px 10px rgba(255, 255, 255, 0.243) ;
+}
+#equalSign {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 166, 0, 0.376);
+    border: 5px solid orange;
+}
+
+@media screen and (max-width: 375px) {
+    .calculator {
+        width: 300px;
+        height: 520px;
+    }
+    .row .item {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        height: 50px;
+    }
+}
+@media screen and (min-width: 375px) and (max-width:500px) {
+    .calculator {
+        min-height: 70vh;
+        height: 560px;
+        width: 350px;
+    }
+    .row .item {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        height: 60px;
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width:900px) {
+    .calculator {
+        min-height: 70vh;
+        height: 580px;
+        width: 400px;
+    }
+    .row .item {
+        font-size: 1.7rem;
+        padding: 0.5rem;
+        height: 65px;
+    }
+}
+
+@media screen and (min-width: 901px) {
+    body::after {
+        content: 'try a smaller screen!!!!!!!!';
+        color: white;
+        font-size: 3rem;
+    }
+    .calculator{
+        display: none;
+    }
+}
