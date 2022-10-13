@@ -1,6 +1,4 @@
-// import logo from './img/logo.svg';
 import { useState } from 'react';
-import './App.css';
 import './style.css'
 
 
