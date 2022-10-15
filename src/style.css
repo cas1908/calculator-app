@@ -10,6 +10,7 @@ body {
     background-color: rgba(23, 19, 19, 0.646);
     min-height: 100vh;
     color: black;
+    overflow: hidden;
 }
 .App {
     width: 100%;

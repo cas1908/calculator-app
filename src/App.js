@@ -15,9 +15,6 @@ function App(props) {
 
     } else if (display === ' ') {
       setDisplay(number)
-    } else if (number === 'C') {
-      setDisplay(display.slice(0,-1))
-      setAnswer("")
     } else {
       setDisplay(display + number)
     }
@@ -28,7 +25,10 @@ function App(props) {
     operator === 'x' ? operator = '*' : operator = e.target.innerText
     setDisplay(display + ' ' + operator + ' ')
   }
-
+  const backSpace = (e)=> {
+    setDisplay(display.slice(0,-1))
+      setAnswer("")
+  }
   const decimal = ()=> {
     const array = display.split(" ")
     const lastValue = array[array.length - 1]
@@ -59,10 +59,10 @@ function App(props) {
         </div>
         {/* <div className='row 2'></div> */}
         <div className='row 7'>
-            <div  className='item' onClick={clear}></div>
+            <div  className='item' onClick={clear}>C</div>
             <div  className='item' onClick={displayNumbers}>(</div>
             <div  className='item' onClick={displayNumbers}>)</div>
-            <div  className='item' onClick={displayOperator}>{'\u00F7'}</div>
+            <div  className='item' onClick={displayOperator}>/</div>
         </div>
         <div className='row 3'>
           <div  className='item' onClick={displayNumbers}>7</div>
@@ -83,7 +83,7 @@ function App(props) {
           <div  className='item' onClick={displayOperator}>+</div>
         </div>
         <div className='row 6'>
-            <div  className='item' onClick={displayNumbers}>C</div>
+            <div  className='item' onClick={backSpace}>del</div>
             <div  className='item' onClick={displayNumbers}>0</div>
             <div  className='item' onClick={decimal}>.</div>
             <div  className='item'id='equalSign' onClick={getAnswer}>=</div>
